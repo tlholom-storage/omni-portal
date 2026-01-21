@@ -17,6 +17,7 @@ export class ActivityUpload {
   private getApiUrl(): string {
     return `${this.configService.getApiBaseUrl()}/sas`;
   }
+
   /**
    * Requests SAS token + uploads file directly to Azure Blob Storage
    */

@@ -60,7 +60,6 @@ export class AnalyticsService {
     };
   }
 
-  /** Clients per status (for bar chart) */
   getClientsByStatus(clients: Client[]) {
     const summary = this.getClientSummary(clients);
     return [summary.allTime.active, summary.allTime.inactive, summary.allTime.lead];
@@ -139,7 +138,6 @@ export class AnalyticsService {
     return { labels, datasets };
   }
 
-  /** Top managers by number of clients */
   getTopManagers(clients: Client[], count = 5) {
     const managerMap: { [manager: string]: number } = {};
     clients.forEach((c) => {

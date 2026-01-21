@@ -9,7 +9,6 @@
 <div class="clients-container">
   <mat-card class="dashboard-card">
 
-    <!-- TOOLBAR -->
     <div class="table-toolbar" [formGroup]="filterForm">
       <mat-form-field appearance="outline" class="search-field">
         <mat-label>Search clients</mat-label>
@@ -21,7 +20,6 @@
     <div class="table-container">
       <table mat-table [dataSource]="dataSource" matSort class="responsive-table">
 
-      <!-- NAME -->
       <ng-container matColumnDef="name">
         <th mat-header-cell *matHeaderCellDef mat-sort-header>Name</th>
         <td mat-cell *matCellDef="let c" data-label="Name" class="name-cell">
@@ -29,7 +27,6 @@
         </td>
       </ng-container>
 
-      <!-- EMAIL -->
       <ng-container matColumnDef="email">
         <th mat-header-cell *matHeaderCellDef mat-sort-header>Email</th>
         <td mat-cell *matCellDef="let c" data-label="Email">
@@ -37,7 +34,6 @@
         </td>
       </ng-container>
 
-      <!-- STATUS -->
       <ng-container matColumnDef="status">
         <th mat-header-cell *matHeaderCellDef mat-sort-header>Status</th>
         <td mat-cell *matCellDef="let c" data-label="Status" class="status-cell">
@@ -47,7 +43,6 @@
         </td>
       </ng-container>
 
-      <!-- CREATED -->
       <ng-container matColumnDef="createdAt">
         <th mat-header-cell *matHeaderCellDef mat-sort-header>Created</th>
         <td mat-cell *matCellDef="let c" data-label="Created">
@@ -55,7 +50,6 @@
         </td>
       </ng-container>
 
-      <!-- ACTIONS -->
       <ng-container matColumnDef="actions">
         <th mat-header-cell *matHeaderCellDef></th>
         <td mat-cell *matCellDef="let c" data-label="Actions" class="actions">

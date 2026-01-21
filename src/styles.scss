@@ -1,10 +1,8 @@
 @use '@angular/material' as mat;
 
-/* Core styles + elevation */
 @include mat.core();
 @include mat.elevation-classes();
 
-/* Material 3 theme */
 $theme: mat.define-theme(
   (
     color: (
@@ -15,7 +13,6 @@ $theme: mat.define-theme(
   )
 );
 
-/* Emit component styles */
 :root {
   @include mat.all-component-themes($theme);
 }
