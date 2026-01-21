@@ -107,3 +107,14 @@ mat-sidenav-content::-webkit-scrollbar {
     gap: 0.5rem;
   }
 }
+
+.success-snackbar {
+  background: #198754;
+  color: white;
+}
+
+.error-snackbar {
+  background: #dc3545;
+  color: white;
+}
+

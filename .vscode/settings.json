@@ -2,5 +2,7 @@
     "appService.zipIgnorePattern": [
         "node_modules{,/**}",
         ".vscode{,/**}"
-    ]
+    ],
+    "appService.defaultWebAppToDeploy": "/subscriptions/da6fb21e-86cb-474d-b447-756790994f5b/resourceGroups/rg-omniChannelClientHub/providers/Microsoft.Web/sites/angular-client-portal",
+    "appService.deploySubpath": "dist\\omni-portal\\browser"
 }

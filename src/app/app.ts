@@ -1,4 +1,4 @@
-import { Component, signal, HostListener, OnInit } from '@angular/core';
+import { Component, signal, HostListener, OnInit, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterOutlet, RouterLink } from '@angular/router';
 
@@ -7,6 +7,8 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
+import { ExternalNavigation } from './services/external-navigation';
+import { ConfigService } from './services/config.service';
 
 @Component({
   selector: 'app-root',
@@ -18,14 +20,15 @@ import { MatButtonModule } from '@angular/material/button';
     MatSidenavModule,
     MatListModule,
     MatIconModule,
-    MatButtonModule
+    MatButtonModule,
   ],
   templateUrl: './app.html',
-  styleUrls: ['./app.scss']
+  styleUrls: ['./app.scss'],
 })
 export class App implements OnInit {
   protected readonly title = signal('omni-portal');
-
+  extNavigator = inject(ExternalNavigation);
+  config = inject(ConfigService);
   opened = signal(true);
   sidenavMode = signal<'side' | 'over'>('side');
   isMobile = signal(false);
@@ -51,7 +54,7 @@ export class App implements OnInit {
   }
 
   toggleSidebar() {
-    this.opened.update(val => !val);
+    this.opened.update((val) => !val);
   }
 
   closeSidebar() {
@@ -60,4 +63,7 @@ export class App implements OnInit {
     }
   }
 
+  openLogsMonitor() {
+    this.extNavigator.openInNewTab(this.config.getLogsMonitorUrl());
+  }
 }

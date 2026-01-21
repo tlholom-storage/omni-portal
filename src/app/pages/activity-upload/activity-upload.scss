@@ -1,0 +1,157 @@
+/* PAGE WRAPPER */
+.upload-wrapper {
+  display: flex;
+  justify-content: center;
+  padding: 2rem;
+  background-color: #f9fafb;
+  min-height: calc(100vh - 100px);
+}
+
+/* CARD */
+.azure-card {
+  width: 100%;
+  max-width: 560px;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+  overflow: hidden;
+}
+
+/* HEADER (same vibe as Clients page header) */
+.azure-header {
+  padding: 1.5rem;
+  border-bottom: 1px solid #e5e7eb;
+
+  h2 {
+    margin: 0;
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #1f2937;
+  }
+
+  p {
+    margin: 0.25rem 0 0;
+    font-size: 0.875rem;
+    color: #6b7280;
+  }
+}
+
+/* FORM BODY */
+.form-body {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.full-width {
+  width: 100%;
+}
+
+/* DROP ZONE */
+.drop-zone {
+  border: 2px dashed #d1d5db;
+  background: #f9fafb;
+  border-radius: 10px;
+  padding: 2.25rem 1.5rem;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+
+  .upload-icon {
+    font-size: 40px;
+    width: 40px;
+    height: 40px;
+    color: #2563eb;
+    margin-bottom: 0.75rem;
+  }
+
+  p {
+    margin: 0;
+    font-size: 0.9rem;
+    color: #374151;
+
+    strong {
+      color: #2563eb;
+      font-weight: 600;
+    }
+  }
+
+  &.has-file {
+    border-style: solid;
+    background: #ffffff;
+
+    .file-info {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: #1f2937;
+
+      mat-icon {
+        color: #2563eb;
+      }
+    }
+  }
+
+  &:hover {
+    background: #f3f4f6;
+    border-color: #2563eb;
+  }
+}
+
+/* ACTIONS */
+.actions {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 0.5rem;
+
+  button {
+    min-width: 160px;
+    height: 40px;
+    font-weight: 600;
+    box-shadow: 0 2px 8px rgba(37, 99, 235, 0.15);
+    transition: box-shadow 0.2s ease, transform 0.15s ease;
+
+    &:hover {
+      box-shadow: 0 4px 12px rgba(37, 99, 235, 0.25);
+      transform: translateY(-1px);
+    }
+
+    mat-spinner {
+      margin-right: 8px;
+    }
+  }
+}
+
+/* MOBILE */
+@media (max-width: 600px) {
+  .upload-wrapper {
+    padding: 1rem;
+  }
+
+  .azure-card {
+    border-radius: 10px;
+  }
+
+  .azure-header {
+    padding: 1rem;
+
+    h2 {
+      font-size: 1.1rem;
+    }
+  }
+
+  .form-body {
+    padding: 1rem;
+  }
+}
+
+.upload-progress {
+  margin-top: 12px;
+  height: 6px;
+  border-radius: 999px;
+}
+

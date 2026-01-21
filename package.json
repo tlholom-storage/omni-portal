@@ -1,9 +1,6 @@
 {
   "name": "omni-portal",
   "version": "0.0.0",
-  "engines": {
-    "node": "24.x"
-  },
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -51,5 +48,5 @@
     "tailwindcss": "^4.1.18",
     "typescript": "~5.9.2",
     "vitest": "^4.0.8"
-  },
+  }
 }

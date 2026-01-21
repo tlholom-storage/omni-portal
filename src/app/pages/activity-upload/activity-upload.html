@@ -1,0 +1,69 @@
+<div class="upload-wrapper">
+  <div class="azure-card">
+    <div class="azure-header">
+      <h2>Upload Activity Logs</h2>
+    </div>
+
+    <div class="form-body">
+      <form [formGroup]="form">
+        <mat-form-field appearance="outline" class="full-width">
+          <mat-label>Client / User</mat-label>
+          <mat-select formControlName="user">
+            @for (user of clients; track user.clientID) {
+              <mat-option [value]="user">
+                {{ user.fullName }}
+              </mat-option>
+            }
+          </mat-select>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="full-width">
+          <mat-label>Activity Period</mat-label>
+
+          <mat-date-range-input [rangePicker]="picker" formGroupName="range">
+            <input matStartDate formControlName="start" />
+            <input matEndDate formControlName="end" />
+          </mat-date-range-input>
+
+          <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-date-range-picker #picker></mat-date-range-picker>
+        </mat-form-field>
+      </form>
+
+      <div
+        class="drop-zone"
+        [class.has-file]="selectedFile"
+        (dragover)="onDragOver($event)"
+        (drop)="onDrop($event)"
+        (click)="fileInput.click()"
+      >
+        <mat-icon class="upload-icon">cloud_upload</mat-icon>
+
+        @if (!selectedFile) {
+          <p>Drag and drop weekly JSON here or <strong>browse</strong></p>
+        } @else {
+          <div class="file-info">
+            <mat-icon>insert_drive_file</mat-icon>
+            <span>{{ selectedFile.name }}</span>
+          </div>
+        }
+
+        <input type="file" #fileInput hidden accept=".json" (change)="onFileSelected($event)" />
+      </div>
+      <div class="actions">
+        <button
+          mat-raised-button
+          color="primary"
+          [disabled]="!selectedFile || form.invalid || isUploading"
+          (click)="prepareAndUpload()"
+        >
+          @if (isUploading) {
+            <mat-spinner diameter="20"></mat-spinner>
+          } @else {
+            <span>Upload to Azure</span>
+          }
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
