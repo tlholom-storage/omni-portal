@@ -98,14 +98,12 @@ All API calls are handled through Angular services using `HttpClient`.
 
 ## Screenshots
 
-> 📸 Dashboard & Client Management UI
--- Dashboard --
+> 📸 Dashboard, Client Management & Activity Uploads UI
+
 ![alt text](image-1.png)
 
--- Client Management -- 
 ![alt text](image.png)
 
--- Activity Uploads --
 ![alt text](image-2.png)
 
 ## Running the Application Locally
