@@ -122,16 +122,17 @@ Start the development server:
 
 ng serve
 The application will be available at:
+```
 
 http://localhost:4200
 Ensure the backend Web API is running and accessible, or update the environment configuration accordingly.
 
-Notes
+## Notes
 The application is designed to be easily extended with additional dashboard widgets.
 
 Angular Material theming is used to maintain a consistent and accessible user interface.
 
 The project structure supports future growth without requiring major refactoring.
 
-License
+## License
 This project is intended for internal, learning, or demonstration purposes.
