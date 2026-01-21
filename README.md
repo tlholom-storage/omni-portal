@@ -3,7 +3,7 @@
 A modern Angular application that communicates with a backend Web API to manage clients, visualise data, and process weekly activity uploads. The application follows current Angular best practices and focuses on maintainability, performance, and a clean user experience.
 
 🔗 **Live Application**  
-https://angular-client-portal.azurewebsites.net/clients
+https://angular-client-portal.azurewebsites.net
 
 ---
 
